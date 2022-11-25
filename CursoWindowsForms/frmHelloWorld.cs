@@ -16,5 +16,15 @@ namespace CursoWindowsForms
         {
             InitializeComponent();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnModificaLabel_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = txtConteudoLabel.Text;
+        }
     }
 }
