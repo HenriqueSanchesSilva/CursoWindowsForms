@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDemonstracaoKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDemonstracaoKey.Designer.cs">
+      <DependentUpon>FrmDemonstracaoKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHelloWorld.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDemonstracaoKey.resx">
+      <DependentUpon>FrmDemonstracaoKey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHelloWorld.resx">
       <DependentUpon>frmHelloWorld.cs</DependentUpon>
     </EmbeddedResource>
