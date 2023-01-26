@@ -16,7 +16,7 @@ namespace CursoWindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmValidaCPF());
+            Application.Run(new frmPrincipal());
         }
     }
 }

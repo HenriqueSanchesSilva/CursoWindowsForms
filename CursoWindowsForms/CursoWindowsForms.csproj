@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsUteis.cs" />
     <Compile Include="frmDemonstracaoKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +65,23 @@
     <Compile Include="frmMascara.Designer.cs">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmValidaCPF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmValidaCPF.Designer.cs">
       <DependentUpon>frmValidaCPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidaCPF2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidaCPF2.Designer.cs">
+      <DependentUpon>frmValidaCPF2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmValidaSenha.cs">
       <SubType>Form</SubType>
@@ -87,8 +100,14 @@
     <EmbeddedResource Include="frmMascara.resx">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmValidaCPF.resx">
       <DependentUpon>frmValidaCPF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidaCPF2.resx">
+      <DependentUpon>frmValidaCPF2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidaSenha.resx">
       <DependentUpon>frmValidaSenha.cs</DependentUpon>
