@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmValidaCPF));
             this.btnReset = new System.Windows.Forms.Button();
             this.btnValida = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnValida);
             this.Controls.Add(this.btnReset);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmValidaCPF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmValidaCPF";

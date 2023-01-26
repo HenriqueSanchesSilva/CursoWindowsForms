@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDemonstracaoKey));
             this.txtInput = new System.Windows.Forms.TextBox();
             this.txtMsg = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -97,7 +98,7 @@
             this.lblLower.Size = new System.Drawing.Size(32, 23);
             this.lblLower.TabIndex = 6;
             // 
-            // FrmDemonstracaoKey
+            // frmDemonstracaoKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +110,8 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtMsg);
             this.Controls.Add(this.txtInput);
-            this.Name = "FrmDemonstracaoKey";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmDemonstracaoKey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Demonstração Evento Key";
             this.ResumeLayout(false);
