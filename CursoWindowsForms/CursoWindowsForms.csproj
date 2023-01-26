@@ -64,6 +64,12 @@
     <Compile Include="frmMascara.Designer.cs">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmValidaCPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidaCPF.Designer.cs">
+      <DependentUpon>frmValidaCPF.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmValidaSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMascara.resx">
       <DependentUpon>frmMascara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidaCPF.resx">
+      <DependentUpon>frmValidaCPF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidaSenha.resx">
       <DependentUpon>frmValidaSenha.cs</DependentUpon>
