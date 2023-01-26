@@ -1,6 +1,6 @@
 ﻿namespace CursoWindowsForms
 {
-    partial class FrmDemonstracaoKey
+    partial class frmDemonstracaoKey
     {
         /// <summary>
         /// Required designer variable.

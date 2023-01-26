@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmDemonstracaoKey.cs">
+    <Compile Include="frmDemonstracaoKey.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDemonstracaoKey.Designer.cs">
-      <DependentUpon>FrmDemonstracaoKey.cs</DependentUpon>
+    <Compile Include="frmDemonstracaoKey.Designer.cs">
+      <DependentUpon>frmDemonstracaoKey.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHelloWorld.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHelloWorld.Designer.cs">
       <DependentUpon>frmHelloWorld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMascara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMascara.Designer.cs">
+      <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
     <Compile Include="frmValidaSenha.cs">
       <SubType>Form</SubType>
@@ -66,11 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmDemonstracaoKey.resx">
-      <DependentUpon>FrmDemonstracaoKey.cs</DependentUpon>
+    <EmbeddedResource Include="frmDemonstracaoKey.resx">
+      <DependentUpon>frmDemonstracaoKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHelloWorld.resx">
       <DependentUpon>frmHelloWorld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMascara.resx">
+      <DependentUpon>frmMascara.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmValidaSenha.resx">
       <DependentUpon>frmValidaSenha.cs</DependentUpon>
