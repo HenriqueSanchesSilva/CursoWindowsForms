@@ -25,7 +25,10 @@ namespace CursoWindowsForms
 
             if (vConteudo != "" && vConteudo.Length > 10)
             {
-                if (MessageBox.Show("Você tem certeza do CPF informado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                frmQuestao qs = new frmQuestao("frmQuestion", "Tem certeza em válidar o CPF?");
+                qs.ShowDialog();
+                //MessageBox.Show("Você tem certeza do CPF informado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes
+                if (qs.DialogResult == DialogResult.Yes)
                 {
                     bool ValidaCpf = false;
                     ValidaCpf = clsUteis.Valida(mskCPF.Text);

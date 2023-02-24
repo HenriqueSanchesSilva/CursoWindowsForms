@@ -19,6 +19,7 @@ namespace CursoWindowsForms
         int ControleValidaCPF = 0;
         int ControleValidaCPF2 = 0;
         int ControleValidaSenha = 0;
+        int ControleArquivoImagem = 0;
 
         public frmPrincipalMenuUC()
         {
@@ -112,6 +113,29 @@ namespace CursoWindowsForms
             if (!(tbcAplications.SelectedTab == null))
             {
                 tbcAplications.TabPages.Remove(tbcAplications.SelectedTab);
+            }
+        }
+
+        private void abrirImagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Db = new OpenFileDialog();
+            Db.InitialDirectory = "C:\\WindowsForms\\Curso\\CursoWindowsForms\\CursoWindowsForms\\Imagens";
+            Db.Filter = "PNG|*.PNG";
+            Db.Title = "Escolha a Imagem";
+
+            if (Db.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = Db.FileName;
+
+                ControleArquivoImagem += 1;
+                frmArquivoImagemUC U = new frmArquivoImagemUC(nomeArquivoImagem);
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Arquivo Imagem " + ControleArquivoImagem;
+                TB.Text = "Arquivo Imagem " + ControleArquivoImagem;
+                TB.ImageIndex = 6; // Coloque aqui o índice da imagem que representa uma pasta
+                TB.Controls.Add(U);
+                tbcAplications.TabPages.Add(TB);
             }
         }
     }

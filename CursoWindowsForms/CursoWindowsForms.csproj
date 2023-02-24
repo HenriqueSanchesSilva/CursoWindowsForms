@@ -67,6 +67,12 @@
     <Compile Include="Formulários Curso 1\frmMascara.Designer.cs">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArquivoImagemUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmArquivoImagemUC.Designer.cs">
+      <DependentUpon>frmArquivoImagemUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMascarasUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="frmPrincipalMenuUC.Designer.cs">
       <DependentUpon>frmPrincipalMenuUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuestao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuestao.Designer.cs">
+      <DependentUpon>frmQuestao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmValidaCpf2UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +168,9 @@
     <EmbeddedResource Include="Formulários Curso 1\frmMascara.resx">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmArquivoImagemUC.resx">
+      <DependentUpon>frmArquivoImagemUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHelloWorldUC.resx">
       <DependentUpon>frmHelloWorldUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipalMenuUC.resx">
       <DependentUpon>frmPrincipalMenuUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuestao.resx">
+      <DependentUpon>frmQuestao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,6 +222,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Imagens\frmQuestion.png" />
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png" />
     <Content Include="Imagens\Frm_HelloWorld.ico" />
@@ -217,6 +236,7 @@
     <Content Include="Imagens\Frm_ValidaCPF2.png" />
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
     <Content Include="Imagens\Frm_ValidaSenha.png" />
+    <None Include="Imagens\frmQuestion.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cursoWindowsFormsBiblioteca\cursoWindowsFormsBiblioteca.csproj">
