@@ -67,11 +67,23 @@
     <Compile Include="Formulários Curso 1\frmMascara.Designer.cs">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMascarasUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMascarasUC.Designer.cs">
+      <DependentUpon>frmMascarasUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHelloWorldUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="frmHelloWorldUC.Designer.cs">
       <DependentUpon>frmHelloWorldUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDemonstraKeyUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmDemonstraKeyUC.Designer.cs">
+      <DependentUpon>frmDemonstraKeyUC.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -114,6 +126,24 @@
     </Compile>
     <Compile Include="frmPrincipalMenuUC.Designer.cs">
       <DependentUpon>frmPrincipalMenuUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidaCpf2UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmValidaCpf2UC.Designer.cs">
+      <DependentUpon>frmValidaCpf2UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidaCpfUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmValidaCpfUC.Designer.cs">
+      <DependentUpon>frmValidaCpfUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidaSenhaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmValidaSenhaUC.Designer.cs">
+      <DependentUpon>frmValidaSenhaUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
