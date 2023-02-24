@@ -48,6 +48,9 @@
             // 
             // txtMsg
             // 
+            this.txtMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMsg.Location = new System.Drawing.Point(8, 40);
             this.txtMsg.Multiline = true;
             this.txtMsg.Name = "txtMsg";
@@ -58,6 +61,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Location = new System.Drawing.Point(328, 8);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 28);
@@ -68,6 +72,7 @@
             // 
             // lblMinus
             // 
+            this.lblMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinus.Location = new System.Drawing.Point(320, 104);
             this.lblMinus.Name = "lblMinus";
             this.lblMinus.Size = new System.Drawing.Size(40, 16);
@@ -76,6 +81,7 @@
             // 
             // lblMaius
             // 
+            this.lblMaius.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaius.Location = new System.Drawing.Point(320, 56);
             this.lblMaius.Name = "lblMaius";
             this.lblMaius.Size = new System.Drawing.Size(40, 16);
@@ -84,6 +90,7 @@
             // 
             // lblUpper
             // 
+            this.lblUpper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUpper.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblUpper.Location = new System.Drawing.Point(368, 56);
             this.lblUpper.Name = "lblUpper";
@@ -92,6 +99,7 @@
             // 
             // lblLower
             // 
+            this.lblLower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLower.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblLower.Location = new System.Drawing.Point(368, 104);
             this.lblLower.Name = "lblLower";

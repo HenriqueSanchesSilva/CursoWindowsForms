@@ -37,6 +37,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Location = new System.Drawing.Point(245, 42);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(111, 23);
@@ -47,6 +48,7 @@
             // 
             // btnValida
             // 
+            this.btnValida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnValida.Location = new System.Drawing.Point(245, 71);
             this.btnValida.Name = "btnValida";
             this.btnValida.Size = new System.Drawing.Size(111, 23);
@@ -66,6 +68,8 @@
             // 
             // mskCPF
             // 
+            this.mskCPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mskCPF.Location = new System.Drawing.Point(12, 45);
             this.mskCPF.Mask = "000,000,000-00";
             this.mskCPF.Name = "mskCPF";

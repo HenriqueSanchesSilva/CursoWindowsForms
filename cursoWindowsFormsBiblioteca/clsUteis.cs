@@ -1,24 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace CursoWindowsForms
+namespace cursoWindowsFormsBiblioteca
 {
-    public partial class frmValidasenha : Form
+    public class clsUteis
     {
-        bool verSenhaTxt = false;
-        public frmValidasenha()
+        public static bool Valida(string cpf)
         {
-            InitializeComponent();
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
+            if (cpf.Length != 11)
+                return false;
+            tempCpf = cpf.Substring(0, 9);
+            soma = 0;
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cpf.EndsWith(digito);
         }
-
         public class ChecaForcaSenha
         {
 
@@ -101,50 +125,6 @@ namespace CursoWindowsForms
                     return ForcaDaSenha.Forte;
                 else
                     return ForcaDaSenha.Segura;
-            }
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            txtSenha.Text = "";
-            lblResultado.Text = "";
-        }
-
-        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
-        {
-            ChecaForcaSenha verifica = new ChecaForcaSenha();
-            ChecaForcaSenha.ForcaDaSenha forca;
-            forca = verifica.GetForcaDaSenha(txtSenha.Text);
-            lblResultado.Text = forca.ToString();
-
-
-            if (lblResultado.Text == "Inaceitavel")
-                lblResultado.ForeColor = Color.Red;
-            else if (lblResultado.Text == "Fraca")
-                lblResultado.ForeColor = Color.DarkRed;
-            else if (lblResultado.Text == "Aceitavel")
-                lblResultado.ForeColor = Color.Black;
-            else if (lblResultado.Text == "Forte")
-                lblResultado.ForeColor = Color.Green;
-            else
-                lblResultado.ForeColor = Color.DarkOliveGreen;
-            
-                
-        }
-
-        private void btnVisible_Click(object sender, EventArgs e)
-        {
-            if (verSenhaTxt == false)
-            {
-                txtSenha.PasswordChar = '*';
-                btnVisible.Text = "Ver Senha";
-                verSenhaTxt = true;
-            }
-            else
-            {
-                txtSenha.PasswordChar = '\0';
-                btnVisible.Text = "Esconder";
-                verSenhaTxt = false;
             }
         }
     }

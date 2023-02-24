@@ -37,7 +37,6 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.Location = new System.Drawing.Point(9, 37);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -48,6 +47,7 @@
             // 
             // lblResultado
             // 
+            this.lblResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblResultado.AutoSize = true;
             this.lblResultado.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblResultado.Location = new System.Drawing.Point(9, 73);
@@ -57,6 +57,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Location = new System.Drawing.Point(184, 34);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(83, 20);
@@ -67,6 +68,7 @@
             // 
             // btnVisible
             // 
+            this.btnVisible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVisible.Location = new System.Drawing.Point(184, 59);
             this.btnVisible.Name = "btnVisible";
             this.btnVisible.Size = new System.Drawing.Size(83, 20);

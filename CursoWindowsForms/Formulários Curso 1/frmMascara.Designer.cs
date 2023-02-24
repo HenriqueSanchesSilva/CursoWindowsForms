@@ -152,8 +152,11 @@
             this.Controls.Add(this.lblMascaraAtiva);
             this.Controls.Add(this.lblConteudo);
             this.Controls.Add(this.mskTxt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMascara";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exemplos Máscaras";

@@ -47,6 +47,7 @@
             // 
             // btnSair
             // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSair.Location = new System.Drawing.Point(250, 265);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 23);
@@ -67,6 +68,8 @@
             // 
             // txtConteudoLabel
             // 
+            this.txtConteudoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConteudoLabel.Location = new System.Drawing.Point(34, 81);
             this.txtConteudoLabel.Name = "txtConteudoLabel";
             this.txtConteudoLabel.Size = new System.Drawing.Size(311, 20);

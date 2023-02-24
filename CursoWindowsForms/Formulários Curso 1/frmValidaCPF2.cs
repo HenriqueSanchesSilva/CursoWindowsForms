@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cursoWindowsFormsBiblioteca;
+
 
 namespace CursoWindowsForms
 {
-    public partial class frmValidaCPF : Form
+    public partial class frmValidaCPF2 : Form
     {
-        public frmValidaCPF()
+        public frmValidaCPF2()
         {
             InitializeComponent();
         }
@@ -21,32 +23,37 @@ namespace CursoWindowsForms
         {
             string vConteudo;
             vConteudo = mskCPF.Text;
-            vConteudo = vConteudo.Replace(".", "").Replace("-", "");
-            vConteudo = vConteudo.Trim();
-            
+            vConteudo = vConteudo.Replace(".", "").Replace("-", "").Trim();
 
-            if (vConteudo != "")
+            if (vConteudo != "" && vConteudo.Length > 10)
             {
                 if (MessageBox.Show("Você tem certeza do CPF informado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     bool ValidaCpf = false;
                     ValidaCpf = clsUteis.Valida(mskCPF.Text);
-
-                    lblResultado.Text = ValidaCpf ? "CPF válido" : "CPF inválido";
+                    if (ValidaCpf == true)
+                    {
+                        MessageBox.Show("CPF VÁLIDO", "Valida CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF INVÁLIDO", "Valida CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+                else
+                    mskCPF.Focus();
             }
             else
                 MessageBox.Show("Preencha todos os campos da formulário!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             mskCPF.Focus();
-
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             mskCPF.Text = "";
-            lblResultado.Text = "";
             mskCPF.Focus();
         }
+
+        
     }
 }
