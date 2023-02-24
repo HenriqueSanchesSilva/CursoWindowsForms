@@ -67,28 +67,34 @@
     <Compile Include="Formulários Curso 1\frmMascara.Designer.cs">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmArquivoImagemUC.cs">
+    <Compile Include="Formulários Curso 2\frmArquivoImagemUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmArquivoImagemUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmArquivoImagemUC.Designer.cs">
       <DependentUpon>frmArquivoImagemUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMascarasUC.cs">
+    <Compile Include="Formulários Curso 2\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 2\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Curso 2\frmMascarasUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmMascarasUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmMascarasUC.Designer.cs">
       <DependentUpon>frmMascarasUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHelloWorldUC.cs">
+    <Compile Include="Formulários Curso 2\frmHelloWorldUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmHelloWorldUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmHelloWorldUC.Designer.cs">
       <DependentUpon>frmHelloWorldUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDemonstraKeyUC.cs">
+    <Compile Include="Formulários Curso 2\frmDemonstraKeyUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmDemonstraKeyUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmDemonstraKeyUC.Designer.cs">
       <DependentUpon>frmDemonstraKeyUC.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
@@ -133,28 +139,28 @@
     <Compile Include="frmPrincipalMenuUC.Designer.cs">
       <DependentUpon>frmPrincipalMenuUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuestao.cs">
+    <Compile Include="Formulários Curso 2\frmQuestao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuestao.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmQuestao.Designer.cs">
       <DependentUpon>frmQuestao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmValidaCpf2UC.cs">
+    <Compile Include="Formulários Curso 2\frmValidaCpf2UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmValidaCpf2UC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmValidaCpf2UC.Designer.cs">
       <DependentUpon>frmValidaCpf2UC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmValidaCpfUC.cs">
+    <Compile Include="Formulários Curso 2\frmValidaCpfUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmValidaCpfUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmValidaCpfUC.Designer.cs">
       <DependentUpon>frmValidaCpfUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmValidaSenhaUC.cs">
+    <Compile Include="Formulários Curso 2\frmValidaSenhaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmValidaSenhaUC.Designer.cs">
+    <Compile Include="Formulários Curso 2\frmValidaSenhaUC.Designer.cs">
       <DependentUpon>frmValidaSenhaUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -168,11 +174,14 @@
     <EmbeddedResource Include="Formulários Curso 1\frmMascara.resx">
       <DependentUpon>frmMascara.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmArquivoImagemUC.resx">
+    <EmbeddedResource Include="Formulários Curso 2\frmArquivoImagemUC.resx">
       <DependentUpon>frmArquivoImagemUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHelloWorldUC.resx">
+    <EmbeddedResource Include="Formulários Curso 2\frmHelloWorldUC.resx">
       <DependentUpon>frmHelloWorldUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 2\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -195,7 +204,7 @@
     <EmbeddedResource Include="frmPrincipalMenuUC.resx">
       <DependentUpon>frmPrincipalMenuUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuestao.resx">
+    <EmbeddedResource Include="Formulários Curso 2\frmQuestao.resx">
       <DependentUpon>frmQuestao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -222,6 +231,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagens\key.png" />
     <None Include="Imagens\frmQuestion.png" />
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png" />
@@ -244,5 +254,6 @@
       <Name>cursoWindowsFormsBiblioteca</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
