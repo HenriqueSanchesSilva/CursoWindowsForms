@@ -97,6 +97,30 @@
     <Compile Include="Formulários Curso 2\frmDemonstraKeyUC.Designer.cs">
       <DependentUpon>frmDemonstraKeyUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuFlutuante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuFlutuante.Designer.cs">
+      <DependentUpon>frmMenuFlutuante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMouseCaptura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMouseCaptura.Designer.cs">
+      <DependentUpon>frmMouseCaptura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMouseCursor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMouseCursor.Designer.cs">
+      <DependentUpon>frmMouseCursor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMouseEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMouseEventos.Designer.cs">
+      <DependentUpon>frmMouseEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +206,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários Curso 2\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuFlutuante.resx">
+      <DependentUpon>frmMenuFlutuante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMouseCaptura.resx">
+      <DependentUpon>frmMouseCaptura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMouseCursor.resx">
+      <DependentUpon>frmMouseCursor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMouseEventos.resx">
+      <DependentUpon>frmMouseEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
