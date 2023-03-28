@@ -20,6 +20,7 @@ namespace CursoWindowsForms
         int ControleValidaCPF2 = 0;
         int ControleValidaSenha = 0;
         int ControleArquivoImagem = 0;
+        int ControleCadastroClientes = 0;
 
         ToolStripMenuItem desenhaItemMenu(string text, string nomeImagem)
         {
@@ -31,11 +32,20 @@ namespace CursoWindowsForms
             return toolTip;
         }
 
+        void apagaAba(TabPage TB)
+        {
+            if (TB.Name == "Cadastro de Clientes")
+            {
+                ControleCadastroClientes = 0;
+            }
+            tbcAplications.TabPages.Remove(TB);
+        }
+
         void apagaEsquerda(int itemSelecionado)
         {
             for (int i = itemSelecionado - 1; i >= 0; i += -1)
             {
-                tbcAplications.TabPages.Remove(tbcAplications.TabPages[i]);
+                apagaAba(tbcAplications.TabPages[i]);
             }
         }
 
@@ -43,7 +53,7 @@ namespace CursoWindowsForms
         {
             for (int i = tbcAplications.TabCount - 1; i > itemSelecionado; i += -1)
             {
-                tbcAplications.TabPages.Remove(tbcAplications.TabPages[i]);
+                apagaAba(tbcAplications.TabPages[i]);
             }
         }
 
@@ -51,7 +61,7 @@ namespace CursoWindowsForms
         {
             if (!(tbcAplications.SelectedTab == null))
             {
-                tbcAplications.TabPages.Remove(tbcAplications.SelectedTab);
+                apagaAba(tbcAplications.SelectedTab);
             }
         }
 
@@ -175,7 +185,7 @@ namespace CursoWindowsForms
         {
             if (!(tbcAplications.SelectedTab == null))
             {
-                tbcAplications.TabPages.Remove(tbcAplications.SelectedTab);
+                apagaAba(tbcAplications.SelectedTab);
             }
         }
 
@@ -220,6 +230,7 @@ namespace CursoWindowsForms
                     abrirImagemToolStripMenuItem.Enabled = true;
                     conectarToolStripMenuItem.Enabled = false;
                     desconectarToolStripMenuItem.Enabled = true;
+                    cadastrosToolStripMenuItem.Enabled = true;
 
                     MessageBox.Show("Bem vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -242,7 +253,7 @@ namespace CursoWindowsForms
 
                 for (int i = tbcAplications.TabPages.Count - 1; i >= 0; i += -1)
                 {
-                    tbcAplications.TabPages.Remove(tbcAplications.TabPages[i]);
+                    apagaAba(tbcAplications.TabPages[i]);
                 }
 
                 novoToolStripMenuItem.Enabled = false;
@@ -250,6 +261,7 @@ namespace CursoWindowsForms
                 abrirImagemToolStripMenuItem.Enabled = false;
                 conectarToolStripMenuItem.Enabled = true;
                 desconectarToolStripMenuItem.Enabled = false;
+                cadastrosToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -274,5 +286,32 @@ namespace CursoWindowsForms
             }
         }
 
+        private void frmPrincipalMenuUC_Load(object sender, EventArgs e)
+        {
+            cadastrosToolStripMenuItem.Enabled = false;
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ControleCadastroClientes == 0)
+            {
+                ControleCadastroClientes += 1;
+                frmCadastroClienteUC U = new frmCadastroClienteUC();
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Cadastro de Clientes";
+                TB.Text = "Cadastro de Clientes";
+                TB.ImageIndex = 7;
+                TB.Controls.Add(U);
+                tbcAplications.TabPages.Add(TB);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir o Cadastro de Clientes, porque ele já está aberto.",
+                    "Banco ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        
     }
 }
