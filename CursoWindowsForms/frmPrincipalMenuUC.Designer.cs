@@ -199,6 +199,7 @@
             this.tbcAplications.SelectedIndex = 0;
             this.tbcAplications.Size = new System.Drawing.Size(800, 426);
             this.tbcAplications.TabIndex = 1;
+            this.tbcAplications.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbcAplications_MouseDown);
             // 
             // imlImages
             // 
