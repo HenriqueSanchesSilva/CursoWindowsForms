@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CursoWindowsFormsBiblioteca.Classes;
+using CursoWindowsFormsBiblioteca.DataBase;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
 using CursoWindowsFormsBiblioteca;
@@ -102,7 +103,20 @@ namespace CursoWindowsForms
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string clienteJson = Cliente.SerializedClassUnit(C);
+
+                Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                if (F.status)
+                {
+                    F.Incluir(C.Id, clienteJson);
+                    if(F.status)
+                        MessageBox.Show(F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show(F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show(F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             catch (ValidationException Ex)
             {
@@ -131,7 +145,7 @@ namespace CursoWindowsForms
 
         private void LimpartoolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão LIMPAR");
+            LimparFormulario();
         }
 
         Cliente.Unit LeituraFormulario()
@@ -225,6 +239,26 @@ namespace CursoWindowsForms
                     }
                 }
             }
+        }
+
+        private void LimparFormulario()
+        {
+            Txt_Bairro.Text = "";
+            Txt_CEP.Text = "";
+            Txt_Complemento.Text = "";
+            Txt_CPF.Text = "";
+            Cmb_Estados.SelectedIndex = -1;
+            Txt_Codigo.Text = "";
+            Txt_Logradouro.Text = "";
+            Txt_NomeCliente.Text = "";
+            Txt_NomeMae.Text = "";
+            Txt_NomePai.Text = "";
+            Txt_Profissao.Text = "";
+            Txt_RendaFamiliar.Text = "";
+            Txt_Telefone.Text = "";
+            Txt_Cidade.Text = "";
+            Chk_TemPai.Checked = false;
+            Rdb_Masculino.Checked = true;
         }
     }
 }
