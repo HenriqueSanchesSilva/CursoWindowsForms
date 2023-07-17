@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CursoWindowsForms
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
@@ -16,7 +16,7 @@ namespace CursoWindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipalMenuUC());
+            Application.Run(new Frm_Principal_Menu_UC());
         }
     }
 }
