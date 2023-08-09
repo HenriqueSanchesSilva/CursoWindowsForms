@@ -28,7 +28,7 @@ namespace CursoWindowsFormsBiblioteca.DataBase
             catch( Exception ex){ 
                 status = false;
 
-                mensagem = "Conexão com o fichario não foi criada: " + ex;
+                mensagem = "Conexão com o fichario não foi criada: " + ex.Message;
             }
 
             
@@ -53,9 +53,32 @@ namespace CursoWindowsFormsBiblioteca.DataBase
             }catch(Exception ex)
             {
                 status = false;
-                mensagem = "Conexão com o fichario não foi criada: " + ex;
+                mensagem = "Conexão com o fichario não foi criada: " + ex.Message;
             }
 
+        }
+
+        public string Buscar(string Id)
+        {
+            status = true;
+            try
+            {
+                if (!(File.Exists(diretorio + "\\" + Id + ".json")))
+                {
+                    status = false;
+                    mensagem = "Identificador não existente." + Id;
+                }
+                else
+                {
+                    //string conteudo = 
+                }
+
+            }
+            catch( Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar conteúdo do Identificador: " + ex.Message;
+            }
         }
            
     }

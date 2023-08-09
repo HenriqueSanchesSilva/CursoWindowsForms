@@ -130,7 +130,22 @@ namespace CursoWindowsForms
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão ABRIR");
+            if ( Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do cliente está vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                if (F.status)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show(F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
