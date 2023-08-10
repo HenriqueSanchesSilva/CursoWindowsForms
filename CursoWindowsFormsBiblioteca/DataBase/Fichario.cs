@@ -70,7 +70,10 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 }
                 else
                 {
-                    //string conteudo = 
+                    string conteudo = File.ReadAllText(diretorio+"\\"+Id+".json");
+                    status = true;
+                    mensagem = "inclusão realizada com sucesso, Identificador:" + Id;
+                    return conteudo;
                 }
 
             }
@@ -79,6 +82,7 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 status = false;
                 mensagem = "Erro ao buscar conteúdo do Identificador: " + ex.Message;
             }
+            return "";
         }
            
     }
