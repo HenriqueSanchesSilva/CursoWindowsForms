@@ -66,21 +66,20 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 if (!(File.Exists(diretorio + "\\" + Id + ".json")))
                 {
                     status = false;
-                    mensagem = "Identificador não existente." + Id;
+                    mensagem = "Identificador não existente: " + Id;
                 }
                 else
                 {
-                    string conteudo = File.ReadAllText(diretorio+"\\"+Id+".json");
+                    string conteudo = File.ReadAllText(diretorio + "\\" + Id + ".json");
                     status = true;
-                    mensagem = "inclusão realizada com sucesso, Identificador:" + Id;
+                    mensagem = "Inclusão efetuada com sucesso. Identificador: " + Id;
                     return conteudo;
                 }
-
             }
-            catch( Exception ex)
+            catch (Exception ex)
             {
                 status = false;
-                mensagem = "Erro ao buscar conteúdo do Identificador: " + ex.Message;
+                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
             }
             return "";
         }

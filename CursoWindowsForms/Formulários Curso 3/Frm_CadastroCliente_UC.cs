@@ -140,9 +140,16 @@ namespace CursoWindowsForms
                 if (F.status)
                 {
                     string clienteJson = F.Buscar(Txt_Codigo.Text);
-                    Cliente.Unit C = new Cliente.Unit();
-                    C = Cliente.DesSerializedClassUnit(clienteJson);
-                    EscreveFormulario(C);
+                    if (clienteJson != "")
+                    {
+                        Cliente.Unit C = new Cliente.Unit();
+                        C = Cliente.DesSerializedClassUnit(clienteJson);
+                        EscreveFormulario(C);
+                    }
+                    else
+                    {
+                        MessageBox.Show(F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -166,7 +173,7 @@ namespace CursoWindowsForms
                     C.ValidaClasse();
                     C.ValidaComplemento();
                     string clienteJson = Cliente.SerializedClassUnit(C);
-                    Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
                     if (F.status)
                     {
                         F.Alterar(C.Id, clienteJson);
@@ -203,7 +210,7 @@ namespace CursoWindowsForms
             }
             else
             {
-                Fichario F = new Fichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
                 if (F.status)
                 {
                     string clienteJson = F.Buscar(Txt_Codigo.Text);
