@@ -416,5 +416,42 @@ namespace CursoWindowsForms
             Chk_TemPai.Checked = false;
             Rdb_Masculino.Checked = true;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+            if (F.status)
+            {
+                List<string> List = new List<string>();
+                List = F.BuscarTodos();
+                if (F.status)
+                {
+                    List<List<string>> ListaBusca = new List<List<string>>();
+                    for (int i = 0; i <= List.Count - 1; i++)
+                    {
+                        Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
+                        ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                    }
+                    frmBusca FForm = new frmBusca(ListaBusca);
+                    FForm.ShowDialog();
+                    if (FForm.DialogResult == DialogResult.OK)
+                    {
+                        var idSelect = FForm.idSelect;
+                        string clienteJson = F.Buscar(idSelect);
+                        Cliente.Unit C = new Cliente.Unit();
+                        C = Cliente.DesSerializedClassUnit(clienteJson);
+                        EscreveFormulario(C);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

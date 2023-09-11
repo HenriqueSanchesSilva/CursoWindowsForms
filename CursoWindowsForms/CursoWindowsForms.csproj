@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Busca.Designer.cs">
+      <DependentUpon>Frm_Busca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulários Curso 1\Frm_DemonstracaoKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Busca.resx">
+      <DependentUpon>Frm_Busca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulários Curso 1\Frm_DemonstracaoKey.resx">
       <DependentUpon>Frm_DemonstracaoKey.cs</DependentUpon>
     </EmbeddedResource>
