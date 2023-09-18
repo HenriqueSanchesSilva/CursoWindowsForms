@@ -128,7 +128,7 @@ namespace CursoWindowsForms
         {
 
             OpenFileDialog Db = new OpenFileDialog();
-            Db.InitialDirectory = "C:\\WindowsForms\\Curso\\CursoWindowsForms\\CursoWindowsForms\\Imagens";
+            Db.InitialDirectory = "E:\\Source\\Repos\\CursoWindowsForms\\Fichario";
             Db.Filter = "PNG|*.PNG";
             Db.Title = "Escolha a Imagem";
 

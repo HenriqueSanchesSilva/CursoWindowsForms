@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace CursoWindowsForms
 {
-    public partial class frmBusca : Form
+    public partial class Frm_Busca : Form
     {
-
         List<List<string>> _ListaBusca = new List<List<string>>();
 
         public string idSelect { get; set; }
 
-        public frmBusca(List<List<string>> ListaBusca)
+        public Frm_Busca(List<List<string>> ListaBusca)
         {
             _ListaBusca = ListaBusca;
             InitializeComponent();
@@ -25,18 +24,19 @@ namespace CursoWindowsForms
             Tls_Principal.Items[0].ToolTipText = "Salvar a seleção";
             Tls_Principal.Items[1].ToolTipText = "Fechar a seleção";
             PreencherLista();
-            lstBusca.Sorted = true;
+            Lst_Busca.Sorted = true;
+
         }
 
         private void PreencherLista()
         {
-            lstBusca.Items.Clear();
+            Lst_Busca.Items.Clear();
             for (int i = 0; i <= _ListaBusca.Count - 1; i++)
             {
                 ItemBox X = new ItemBox();
                 X.id = _ListaBusca[i][0];
                 X.nome = _ListaBusca[i][1];
-                lstBusca.Items.Add(X);
+                Lst_Busca.Items.Add(X);
             }
         }
 
@@ -49,7 +49,7 @@ namespace CursoWindowsForms
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            ItemBox ItemSelecionado = (ItemBox)lstBusca.Items[lstBusca.SelectedIndex];
+            ItemBox ItemSelecionado = (ItemBox)Lst_Busca.Items[Lst_Busca.SelectedIndex];
             idSelect = ItemSelecionado.id;
             this.Close();
         }

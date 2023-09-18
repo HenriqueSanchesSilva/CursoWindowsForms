@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using CursoWindowsFormsBiblioteca.DataBase;
-using CursoWindowsFormsBiblioteca.Classes;
 
-namespace CursoWindowsFormsBiblioteca.DataBase
+namespace CursoWindowsFormsBiblioteca.Databases
 {
     public class Fichario
     {
+
         public string diretorio;
         public string mensagem;
         public bool status;
 
-        public Fichario(string Diretorio)
+        public Fichario (string Diretorio)
         {
             status = true;
             try
@@ -25,36 +24,14 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                     Directory.CreateDirectory(Diretorio);
                 }
                 diretorio = Diretorio;
-                mensagem = "Conexão com o fichario criada com sucesso";
+                mensagem = "Conexão com o Fichario criada com sucesso.";
             }
-            catch( Exception ex){ 
-                status = false;
-
-                mensagem = "Conexão com o fichario não foi criada: " + ex.Message;
-            }
-
-            
-        }
-        public List<string> BuscarTodos()
-        {
-            status = true;
-            List<string> List = new List<string>();
-            try
-            {
-                var Arquivos = Directory.GetFiles(diretorio, "*.json");
-                for (int i = 0; i <= Arquivos.Length - 1; i++)
-                {
-                    string conteudo = File.ReadAllText(Arquivos[i]);
-                    List.Add(conteudo);
-                }
-                return List;
-            }
-            catch (Exception ex)
+            catch( Exception ex)
             {
                 status = false;
-                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
             }
-            return List;
+          
         }
 
         public void Incluir(string Id, string jsonUnit)
@@ -65,19 +42,20 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 if (File.Exists(diretorio + "\\" + Id + ".json"))
                 {
                     status = false;
-                    mensagem = "Inclusão negada, o id " + Id + " já existe.";
+                    mensagem = "Inclusão não permitida porque o identificador já existe: " + Id;
                 }
                 else
                 {
                     File.WriteAllText(diretorio + "\\" + Id + ".json", jsonUnit);
                     status = true;
-                    mensagem = "Inclusão efetuada com sucesso";
+                    mensagem = "Inclusão efetuada com sucesso. Identificador: " + Id;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 status = false;
-                mensagem = "Conexão com o fichario não foi criada: " + ex.Message;
-            }
+                mensagem = "Conexão com o Fichario com erro: " + ex.Message;
+            }       
 
         }
 
@@ -105,6 +83,28 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
             }
             return "";
+        }
+
+        public List<string> BuscarTodos()
+        {
+            status = true;
+            List<string> List = new List<string>();
+            try
+            {
+                var Arquivos = Directory.GetFiles(diretorio, "*.json");
+                for (int i = 0; i <= Arquivos.Length - 1; i++)
+                {
+                    string conteudo = File.ReadAllText(Arquivos[i]);
+                    List.Add(conteudo);
+                }
+                return List;
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao buscar o conteúdo do identificador: " + ex.Message;
+            }
+            return List;
         }
 
         public void Apagar (string Id)
@@ -154,6 +154,7 @@ namespace CursoWindowsFormsBiblioteca.DataBase
                 status = false;
                 mensagem = "Conexão com o Fichario com erro: " + ex.Message;
             }
+
         }
     }
 }

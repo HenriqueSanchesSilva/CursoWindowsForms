@@ -1,6 +1,6 @@
 ﻿namespace CursoWindowsForms
 {
-    partial class frmBusca
+    partial class Frm_Busca
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Busca));
             this.Tls_Principal = new System.Windows.Forms.ToolStrip();
             this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ApagatoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.lstBusca = new System.Windows.Forms.ListBox();
+            this.Lst_Busca = new System.Windows.Forms.ListBox();
             this.Tls_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,27 +67,27 @@
             this.ApagatoolStripButton.Text = "toolStripButton1";
             this.ApagatoolStripButton.Click += new System.EventHandler(this.ApagatoolStripButton_Click);
             // 
-            // lstBusca
+            // Lst_Busca
             // 
-            this.lstBusca.FormattingEnabled = true;
-            this.lstBusca.Location = new System.Drawing.Point(12, 37);
-            this.lstBusca.Name = "lstBusca";
-            this.lstBusca.Size = new System.Drawing.Size(321, 264);
-            this.lstBusca.TabIndex = 58;
+            this.Lst_Busca.FormattingEnabled = true;
+            this.Lst_Busca.Location = new System.Drawing.Point(12, 37);
+            this.Lst_Busca.Name = "Lst_Busca";
+            this.Lst_Busca.Size = new System.Drawing.Size(321, 264);
+            this.Lst_Busca.TabIndex = 58;
             // 
-            // frmBusca
+            // Frm_Busca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 320);
-            this.Controls.Add(this.lstBusca);
+            this.Controls.Add(this.Lst_Busca);
             this.Controls.Add(this.Tls_Principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmBusca";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Name = "Frm_Busca";
+            this.Text = "Frm_Busca";
             this.Tls_Principal.ResumeLayout(false);
             this.Tls_Principal.PerformLayout();
             this.ResumeLayout(false);
@@ -100,6 +100,6 @@
         private System.Windows.Forms.ToolStrip Tls_Principal;
         private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.ToolStripButton ApagatoolStripButton;
-        private System.Windows.Forms.ListBox lstBusca;
+        private System.Windows.Forms.ListBox Lst_Busca;
     }
 }
