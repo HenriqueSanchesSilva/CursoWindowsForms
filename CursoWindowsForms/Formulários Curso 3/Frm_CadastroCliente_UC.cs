@@ -121,12 +121,15 @@ namespace CursoWindowsForms
         {
             try
             {
+
                 Cliente.Unit C = new Cliente.Unit();
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                C.IncluirFichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                //C.IncluirFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                C.IncluirFicharioDb("Cliente");
                 MessageBox.Show("OK: Indentificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (ValidationException Ex)
             {
@@ -149,7 +152,8 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                    //C = C.BuscarFicharioDB(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C = C.BuscarFicharioDb(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -163,6 +167,7 @@ namespace CursoWindowsForms
                 {
                     MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
         }
 
@@ -180,7 +185,8 @@ namespace CursoWindowsForms
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                    //C.AlterarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C.AlterarFicharioDb("Cliente");
                     MessageBox.Show("OK: Indentificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ValidationException Ex)
@@ -206,7 +212,8 @@ namespace CursoWindowsForms
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                    //C = C.BuscarFichario(Txt_Codigo.Text, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C = C.BuscarFicharioDb(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -218,7 +225,8 @@ namespace CursoWindowsForms
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ApagarFichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
+                            //C.ApagarFichario("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                            C.ApagarFicharioDb("Cliente");
                             MessageBox.Show("OK: Indentificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
                         }
@@ -389,40 +397,33 @@ namespace CursoWindowsForms
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
 
-            Fichario F = new Fichario("E:\\Source\\Repos\\CursoWindowsForms\\Fichario");
-            if (F.status)
+            try
             {
-                List<string> List = new List<string>();
-                List = F.BuscarTodos();
-                if (F.status)
+                Cliente.Unit C = new Cliente.Unit();
+                //var ListaBusca = C.BuscarFicharioTodos("C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                var ListaBusca = C.BuscarFicharioTodosDb("Cliente");
+                Frm_Busca FForm = new Frm_Busca(ListaBusca);
+                FForm.ShowDialog();
+                if (FForm.DialogResult == DialogResult.OK)
                 {
-                    List<List<string>> ListaBusca = new List<List<string>> ();
-                    for (int i = 0; i <= List.Count - 1; i++)
+                    var idSelect = FForm.idSelect;
+                    //C = C.BuscarFichario(idSelect, "C:\\WindowsForms\\Curso\\CursoWindowsForms\\Fichario");
+                    C = C.BuscarFicharioDb(idSelect, "Cliente");
+                    if (C == null)
                     {
-                        Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
-                        ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    Frm_Busca FForm = new Frm_Busca(ListaBusca);
-                    FForm.ShowDialog();
-                    if (FForm.DialogResult == DialogResult.OK)
+                    else
                     {
-                        var idSelect = FForm.idSelect;
-                        string clienteJson = F.Buscar(idSelect);
-                        Cliente.Unit C = new Cliente.Unit();
-                        C = Cliente.DesSerializedClassUnit(clienteJson);
                         EscreveFormulario(C);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("ERR " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }                 
             }
-            else
+            catch (Exception Ex)
             {
-                MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          
+
         }
     }
 }
