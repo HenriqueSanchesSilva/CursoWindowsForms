@@ -1,0 +1,1 @@
+Data Source=NOTEHENRIQUE;Initial Catalog=ByteBank;Persist Security Info=True;User ID=sa;Password=root

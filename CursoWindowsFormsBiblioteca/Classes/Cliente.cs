@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 using CursoWindowsFormsBiblioteca.Databases;
+using Newtonsoft.Json;
 
 namespace CursoWindowsFormsBiblioteca.Classes
 {
@@ -111,6 +109,8 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 }
             }
 
+            #region "CRUD"
+
             public void IncluirFichario(string Conexao)
             {
                 string clienteJson = Cliente.SerializedClassUnit(this);
@@ -177,7 +177,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
                     throw new Exception(F.mensagem);
                 }
             }
-
+            #endregion
 
             #region "CRUD do FicharioDB Local DB"
 
@@ -253,6 +253,105 @@ namespace CursoWindowsFormsBiblioteca.Classes
             public List<List<string>> BuscarFicharioTodosDb(string conexao)
             {
                 FicharioDb F = new FicharioDb(conexao);
+                if (F.status)
+                {
+                    List<string> List = new List<string>();
+                    List = F.BuscarTodos();
+                    if (F.status)
+                    {
+                        List<List<string>> ListaBusca = new List<List<string>>();
+                        for (int i = 0; i <= List.Count - 1; i++)
+                        {
+                            Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
+                            ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        }
+                        return ListaBusca;
+                    }
+                    else
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            #endregion
+
+            #region "CRUD do Fichario DB SQL Server"
+
+            public void IncluirFicharioSQL(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                FicharioSQLServer F = new FicharioSQLServer(Conexao);
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public Unit BuscarFicharioSQL(string id, string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);
+                    return Cliente.DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void AlterarFicharioSQL(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+                if (F.status)
+                {
+                    F.Alterar(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void ApagarFicharioSQL(string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
+                if (F.status)
+                {
+                    F.Apagar(this.Id);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public List<List<string>> BuscarFicharioDBTodosSQL(string conexao)
+            {
+                FicharioSQLServer F = new FicharioSQLServer(conexao);
                 if (F.status)
                 {
                     List<string> List = new List<string>();
